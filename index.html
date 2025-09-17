@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opbarst Veiligheidsfactor Analyse</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Opbarst Veiligheidsfactor Analyse</h1>
+            <p>Beoordeling van het opbarstgevaar op basis van waterspanningen</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Invoergegevens</h2>
+                <div class="input-group">
+                    <label for="actualWaterLevel">Actuele Stijghoogte (m):</label>
+                    <input type="number" id="actualWaterLevel" step="0.01" min="0.01" max="100" placeholder="bijv. 12.50">
+                </div>
+                <div class="input-group">
+                    <label for="criticalWaterLevel">Kritieke Stijghoogte (m):</label>
+                    <input type="number" id="criticalWaterLevel" step="0.01" min="0.01" max="100" placeholder="bijv. 11.50">
+                </div>
+                <button id="calculateBtn" onclick="calculateSafetyFactor()">Bereken Veiligheidsfactor</button>
+            </section>
+
+            <section class="result-section" id="resultSection" style="display: none;">
+                <div class="safety-factor-display" id="safetyFactorDisplay">
+                    <div class="safety-factor-number" id="safetyFactorNumber">0.00</div>
+                    <div class="safety-factor-label" id="safetyFactorLabel">VEILIGHEIDSFACTOR</div>
+                </div>
+
+                <div class="status-message" id="statusMessage">
+                    <h3 id="statusTitle"></h3>
+                    <p id="statusDescription"></p>
+                </div>
+
+                <div class="details-section">
+                    <h3>Details</h3>
+                    <div class="detail-row">
+                        <span class="detail-label">Actuele Stijghoogte:</span>
+                        <span class="detail-value" id="displayActualLevel">0.00 m</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Kritieke Stijghoogte:</span>
+                        <span class="detail-value" id="displayCriticalLevel">0.00 m</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Veiligheidsmarge:</span>
+                        <span class="detail-value" id="safetyMargin">0.00 m</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Aanbevolen max. stijghoogte:</span>
+                        <span class="detail-value" id="targetLevel">0.00 m</span>
+                    </div>
+                </div>
+
+                <div class="recommendations" id="recommendations">
+                    <h3>Aanbevelingen</h3>
+                    <div id="recommendationText"></div>
+                </div>
+
+                <div class="reference-values">
+                    <h3>Referentiewaarden</h3>
+                    <div class="reference-item safe">
+                        <span class="ref-color green"></span>
+                        <span>FS ≥ 1.10: Geen opbarstgevaar verwacht</span>
+                    </div>
+                    <div class="reference-item warning">
+                        <span class="ref-color orange"></span>
+                        <span>1.00 ≤ FS < 1.10: Mogelijk opbarstgevaar</span>
+                    </div>
+                    <div class="reference-item danger">
+                        <span class="ref-color red"></span>
+                        <span>FS < 1.00: Opbarstgevaar!</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
