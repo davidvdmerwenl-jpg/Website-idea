@@ -1,0 +1,311 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 1.1em;
+}
+
+/* Input section styles */
+.input-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.input-section h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.8em;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+#calculateBtn {
+    background: #3498db;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+#calculateBtn:hover {
+    background: #2980b9;
+}
+
+/* Result section styles */
+.result-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Safety factor display - main visual element */
+.safety-factor-display {
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 3px solid;
+    transition: all 0.3s ease;
+}
+
+.safety-factor-number {
+    font-size: 72px; /* Large 36pt equivalent */
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.safety-factor-label {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Color coding for safety factor */
+.safety-factor-display.safe {
+    background-color: #d5f4e6;
+    border-color: #27ae60;
+    color: #27ae60;
+}
+
+.safety-factor-display.warning {
+    background-color: #fdf2e9;
+    border-color: #f39c12;
+    color: #e67e22;
+}
+
+.safety-factor-display.danger {
+    background-color: #fadbd8;
+    border-color: #e74c3c;
+    color: #c0392b;
+}
+
+/* Status message styles */
+.status-message {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.status-message.safe {
+    background-color: #d5f4e6;
+    color: #27ae60;
+    border: 2px solid #27ae60;
+}
+
+.status-message.warning {
+    background-color: #fdf2e9;
+    color: #e67e22;
+    border: 2px solid #f39c12;
+}
+
+.status-message.danger {
+    background-color: #fadbd8;
+    color: #c0392b;
+    border: 2px solid #e74c3c;
+}
+
+.status-message h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Details section */
+.details-section {
+    margin-bottom: 30px;
+}
+
+.details-section h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.4em;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #34495e;
+}
+
+.detail-value {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Recommendations section */
+.recommendations {
+    margin-bottom: 30px;
+}
+
+.recommendations h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.4em;
+}
+
+#recommendationText {
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+#recommendationText.safe {
+    background-color: #d5f4e6;
+    color: #27ae60;
+    border-left: 4px solid #27ae60;
+}
+
+#recommendationText.warning {
+    background-color: #fdf2e9;
+    color: #e67e22;
+    border-left: 4px solid #f39c12;
+}
+
+#recommendationText.danger {
+    background-color: #fadbd8;
+    color: #c0392b;
+    border-left: 4px solid #e74c3c;
+}
+
+/* Reference values section */
+.reference-values {
+    border-top: 2px solid #ecf0f1;
+    padding-top: 20px;
+}
+
+.reference-values h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.4em;
+}
+
+.reference-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.ref-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-right: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.ref-color.green {
+    background-color: #27ae60;
+}
+
+.ref-color.orange {
+    background-color: #f39c12;
+}
+
+.ref-color.red {
+    background-color: #e74c3c;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .safety-factor-number {
+        font-size: 48px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .detail-value {
+        margin-top: 5px;
+    }
+}
